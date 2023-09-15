@@ -6,19 +6,19 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:09:56 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 07:36:33 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:44:55 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Undefined", 100, 50, 20)
+ScavTrap::ScavTrap() : ClapTrap("Undefined", 100, 50, 30)
 {
 	guardState = false;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 30)
 {
 	guardState = false;
 	std::cout << "ScavTrap default constructor called" << std::endl;
