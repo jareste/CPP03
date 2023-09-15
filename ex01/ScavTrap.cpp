@@ -6,7 +6,7 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:09:56 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 23:03:30 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:11:02 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,26 @@ ScavTrap::~ScavTrap()
 ScavTrap	&ScavTrap::operator=( const ScavTrap& scavtrap )
 {
 	this->guardState = scavtrap.getGuardState();
-	this->Name = scavtrap.getName();
-	this->HitPoints = (scavtrap.getHitPoints());
-	this->EnergyPoints = (scavtrap.getEnergyPoints());
-	this->AttackDamage = (scavtrap.getAttackDamage());
+	this->name = scavtrap.getName();
+	this->hitPoints = (scavtrap.getHitPoints());
+	this->energyPoints = (scavtrap.getEnergyPoints());
+	this->attackDamage = (scavtrap.getAttackDamage());
 	return (*this);
 }
 
-void	attack(const std::string& target)
+void	ScavTrap::attack(const std::string& target)
 {
-	if (!this->hitPoints || !this->energyPoints)
+	if (!this->getHitPoints() || !this->getEnergyPoints())
 	{
-		std::cout << "ScavTrap " << this->name << " is dead." << std::endl;
+		std::cout << "ScavTrap " << this->getName() << " is dead." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << this->name << " attacks " << target \
-	<< ", causing " << this->attackDamage << " points of damage!" << std::endl;
-	this->energyPoints--;
-	if (!energyPoints)
-		std::cout << "ScavTrap " << this->name \
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target \
+	<< ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	int	_EnergyPoints = getEnergyPoints();
+	this->setEnergyPoints(_EnergyPoints--);
+	if (!getEnergyPoints())
+		std::cout << "ScavTrap " << this->getName() \
 	<< " died after running out of energyPoints." << std::endl;
 }
 

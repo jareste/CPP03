@@ -6,7 +6,7 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:59:37 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 23:01:34 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:09:03 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ FragTrap::~FragTrap()
 
 FragTrap	&FragTrap::operator=( const FragTrap& src )
 {
-	this->Name = (src.getName());
-	this->HitPoints = (src.getHitPoints());
-	this->EnergyPoints = (src.getEnergyPoints());
-	this->AttackDamage = (src.getAttackDamage());
+	this->name = (src.getName());
+	this->hitPoints = (src.getHitPoints());
+	this->energyPoints = (src.getEnergyPoints());
+	this->attackDamage = (src.getAttackDamage());
 	return (*this);
 }
 
