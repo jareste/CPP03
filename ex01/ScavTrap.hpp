@@ -6,7 +6,7 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:09:52 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 05:38:50 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 07:21:15 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ class ScavTrap : public ClapTrap
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
+		ScavTrap( const ScavTrap &src );
 		~ScavTrap();
+		ScavTrap	&operator=( const ScavTrap& ScavTrap );
 		void	guardGate();
 		void	guardStatus();
+		bool	getGuardState() const;		
 };
 
 #endif

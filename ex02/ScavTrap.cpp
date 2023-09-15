@@ -6,7 +6,7 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:09:56 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 06:12:52 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 07:36:33 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,25 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
+ScavTrap::ScavTrap( const ScavTrap &src )
+{
+	*this = src;
+	std::cout << "Copy construcotr called" << std::endl;
+}
+
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap default destructor called for " << this->getName() << std::endl;
+	std::cout << "ScavTrap default destructor called" << std::endl;
+}
+
+ScavTrap	&ScavTrap::operator=( const ScavTrap& scavtrap )
+{
+	this->guardState = scavtrap.getGuardState();
+	this->setName(scavtrap.getName());
+	this->setHitPoints(scavtrap.getHitPoints());
+	this->setEnergyPoints(scavtrap.getEnergyPoints());
+	this->setAttackDamage(scavtrap.getAttackDamage());
+	return (*this);
 }
 
 void	ScavTrap::guardGate()
@@ -43,3 +59,7 @@ void	ScavTrap::guardStatus()
 		std::cout << "ScavTrap is in guard mode." << std::endl;
 }
 
+bool	ScavTrap::getGuardState() const
+{
+	return (this->guardState);
+}
