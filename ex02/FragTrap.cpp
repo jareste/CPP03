@@ -6,7 +6,7 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:59:37 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 12:45:08 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:01:34 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
 FragTrap::FragTrap( const FragTrap &src )
 {
 	*this = src;
-	std::cout << "FragTrap Copy construcotr called" << std::endl;
+	std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap()
@@ -35,21 +35,12 @@ FragTrap::~FragTrap()
 
 FragTrap	&FragTrap::operator=( const FragTrap& src )
 {
-	this->setName(src.getName());
-	this->setHitPoints(src.getHitPoints());
-	this->setEnergyPoints(src.getEnergyPoints());
-	this->setAttackDamage(src.getAttackDamage());
+	this->Name = (src.getName());
+	this->HitPoints = (src.getHitPoints());
+	this->EnergyPoints = (src.getEnergyPoints());
+	this->AttackDamage = (src.getAttackDamage());
 	return (*this);
 }
-
-// FragTrap	&FragTrap::operator=( const FragTrap& fragtrap )
-// {
-// 	this->name = claptrap.getName();
-// 	this->hitPoints = claptrap.getHitPoints();
-// 	this->energyPoints = claptrap.getEnergyPoints();
-// 	this->attackDamage = claptrap.getAttackDamage();
-// 	return (*this);
-// }
 
 void	FragTrap::highFivesGuys()
 {

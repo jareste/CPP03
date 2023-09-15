@@ -6,7 +6,7 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 04:21:43 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 07:35:44 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:02:27 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap default construcotr called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 	name = "Undefined";
 	hitPoints = 10;
 	energyPoints = 10;
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "ClapTrap name construcotr called" << std::endl;
+	std::cout << "ClapTrap name constructor called" << std::endl;
 	this->name = name;
 	hitPoints = 10;
 	energyPoints = 10;
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage)
 {
-	std::cout << "ClapTrap name construcotr called" << std::endl;
+	std::cout << "ClapTrap heritage constructor called" << std::endl;
 	this->name = name;
 	this->hitPoints = hitPoints;
 	this->energyPoints = energyPoints;
@@ -42,7 +42,7 @@ ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attack
 ClapTrap::ClapTrap( const ClapTrap &src )
 {
 	*this = src;
-	std::cout << "Copy construcotr called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()

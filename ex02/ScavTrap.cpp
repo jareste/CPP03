@@ -6,22 +6,22 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:09:56 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 12:44:55 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:01:54 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Undefined", 100, 50, 30)
+ScavTrap::ScavTrap() : ClapTrap("Undefined", 100, 50, 20)
 {
 	guardState = false;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 30)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 {
 	guardState = false;
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << "ScavTrap name constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap &src )
@@ -38,11 +38,26 @@ ScavTrap::~ScavTrap()
 ScavTrap	&ScavTrap::operator=( const ScavTrap& scavtrap )
 {
 	this->guardState = scavtrap.getGuardState();
-	this->setName(scavtrap.getName());
-	this->setHitPoints(scavtrap.getHitPoints());
-	this->setEnergyPoints(scavtrap.getEnergyPoints());
-	this->setAttackDamage(scavtrap.getAttackDamage());
+	this->Name = scavtrap.getName();
+	this->HitPoints = (scavtrap.getHitPoints());
+	this->EnergyPoints = (scavtrap.getEnergyPoints());
+	this->AttackDamage = (scavtrap.getAttackDamage());
 	return (*this);
+}
+
+void	attack(const std::string& target)
+{
+	if (!this->hitPoints || !this->energyPoints)
+	{
+		std::cout << "ScavTrap " << this->name << " is dead." << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << this->name << " attacks " << target \
+	<< ", causing " << this->attackDamage << " points of damage!" << std::endl;
+	this->energyPoints--;
+	if (!energyPoints)
+		std::cout << "ScavTrap " << this->name \
+	<< " died after running out of energyPoints." << std::endl;
 }
 
 void	ScavTrap::guardGate()

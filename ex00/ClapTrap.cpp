@@ -6,7 +6,7 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 04:21:43 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 07:15:02 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:03:03 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default construcotr called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 	name = "Undefined";
 	hitPoints = 10;
 	energyPoints = 10;
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "Name construcotr called" << std::endl;
+	std::cout << "Name constructor called" << std::endl;
 	this->name = name;
 	hitPoints = 10;
 	energyPoints = 10;
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::ClapTrap( const ClapTrap &src )
 {
 	*this = src;
-	std::cout << "Copy construcotr called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 
