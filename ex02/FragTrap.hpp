@@ -6,12 +6,12 @@
 /*   By: jareste- <jareste-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 05:42:35 by jareste-          #+#    #+#             */
-/*   Updated: 2023/09/15 07:37:04 by jareste-         ###   ########.fr       */
+/*   Updated: 2023/09/16 12:28:31 by jareste-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAPP_HPP
-# define FRAGTRAPP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
